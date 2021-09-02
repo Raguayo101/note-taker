@@ -1,10 +1,10 @@
 const express = require('express');
-apiRoutes = require('./route/apiRoutes')
-const webRoutes = require('./routes/webRoutes')
+const apiRoutes = require('./routes/apiRoutes');
+const webRoutes = require('./routes/webRoutes');
 
 // setting up port and our app
 const app = express();
-const PORT = process.env.port || 3000;
+const PORT = process.env.port || 8000;
 
 // setting up our routes 
 app.use(express.json());
@@ -13,5 +13,5 @@ app.use(express.static('public'));
 app.use('/api', apiRoutes);
 app.listen('/', webRoutes);
 
-// stras up our server port
+// strat up our server port
 app.listen(PORT, () => console.log(`listening on PORT: ${PORT}`));
