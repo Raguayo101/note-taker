@@ -40,7 +40,7 @@ class Shop {
         const newUserNote = { title, text, id: uuidv1() };
 
         return this.getUserNotes()
-            .then((notes) => [...notes, newNote])
+            .then((notes) => [...notes, newUserNote])
             .then((newNotes) => this.write(newNotes))
             .then(() => newUserNote);
     }
