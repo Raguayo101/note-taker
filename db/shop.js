@@ -12,7 +12,7 @@ class Shop {
     }
 
     write(note) {
-        return writeFile('db')
+        return writeFile('db/db.json', JSON.stringify(note));
     }
 
     getUserNotes() {
@@ -39,6 +39,7 @@ class Shop {
 
         const newUserNote = { title, text, id: uuidv1() };
 
+        // gets user notes
         return this.getUserNotes()
             .then((notes) => [...notes, newUserNote])
             .then((newNotes) => this.write(newNotes))
@@ -47,6 +48,7 @@ class Shop {
 
     removeUserNote(id) {
 
+        // removes note
         return this.getUserNotes()
             .then((notes) => notes.filter((note) => note.id !== id))
             .then((filteredNotes) => this.write(filteredNotes));

@@ -4,6 +4,7 @@ const webRoutes = require('./routes/webRoutes');
 
 // setting up port and our app
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 // setting up our routes 
 app.use(express.json());
