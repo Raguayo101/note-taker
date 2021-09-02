@@ -1,6 +1,6 @@
 const express = require('express');
 apiRoutes = require('./route/apiRoutes')
-const htmlRoutes = require('./routes/htmlRoutes')
+const webRoutes = require('./routes/webRoutes')
 
 // setting up port and our app
 const app = express();
@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use('/api', apiRoutes);
-app.listen('/', htmlRoutes);
+app.listen('/', webRoutes);
 
 // stras up our server port
 app.listen(PORT, () => console.log(`listening on PORT: ${PORT}`));
